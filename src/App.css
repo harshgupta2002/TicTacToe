@@ -1,38 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.game-board {
+    margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.board-row {
+    display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.status {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square {
+    background: #ffffff;
+    border: 2px solid #007bff;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 60px;
+    height: 60px;
+    width: 60px;
+    margin-right: -2px;
+    margin-top: -2px;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.square:hover {
+    background: #007bff;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.square:focus {
+    outline: none;
+    background: #0056b3;
+    color: #ffffff;
+}
+
+.kbd-navigation .square:focus {
+    background: #ddd;
+}
+
+.square:nth-child(3n) {
+    margin-right: 0;
+}
+
+.square:nth-last-child(-n+3) {
+    margin-top: 0;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 600px) {
+    .game {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .square {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        line-height: 40px;
+    }
+
+    .status {
+        font-size: 18px;
+    }
 }
